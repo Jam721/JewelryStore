@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JewelryStore.API", "JewelryStore.API\JewelryStore.API.csproj", "{38A9D66B-917D-4329-9B9B-DB1573CFDDB1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JewelryStore.Domain", "JewelryStore.Domain\JewelryStore.Domain.csproj", "{73E7CC96-EA90-4BC1-B6E3-1BE06F3BD9AC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JewelryStore.Application", "JewelryStore.Application\JewelryStore.Application.csproj", "{D22832DB-3406-429C-9D8B-5437F7780B67}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JewelryStore.Infrastructure", "JewelryStore.Infrastructure\JewelryStore.Infrastructure.csproj", "{9DEAE326-95BD-4846-AD2C-F8E5FD0B1343}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{38A9D66B-917D-4329-9B9B-DB1573CFDDB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38A9D66B-917D-4329-9B9B-DB1573CFDDB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38A9D66B-917D-4329-9B9B-DB1573CFDDB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38A9D66B-917D-4329-9B9B-DB1573CFDDB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73E7CC96-EA90-4BC1-B6E3-1BE06F3BD9AC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73E7CC96-EA90-4BC1-B6E3-1BE06F3BD9AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73E7CC96-EA90-4BC1-B6E3-1BE06F3BD9AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73E7CC96-EA90-4BC1-B6E3-1BE06F3BD9AC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D22832DB-3406-429C-9D8B-5437F7780B67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D22832DB-3406-429C-9D8B-5437F7780B67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D22832DB-3406-429C-9D8B-5437F7780B67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D22832DB-3406-429C-9D8B-5437F7780B67}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DEAE326-95BD-4846-AD2C-F8E5FD0B1343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DEAE326-95BD-4846-AD2C-F8E5FD0B1343}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DEAE326-95BD-4846-AD2C-F8E5FD0B1343}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DEAE326-95BD-4846-AD2C-F8E5FD0B1343}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
