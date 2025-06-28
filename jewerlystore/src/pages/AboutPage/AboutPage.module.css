@@ -1,0 +1,397 @@
+.aboutPage {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+/* Герой секция */
+.hero {
+    position: relative;
+    height: 60vh;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('public/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.heroContent {
+    max-width: 800px;
+    padding: 0 20px;
+    z-index: 1;
+}
+
+.heroContent h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.heroContent p {
+    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Основной контейнер */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 20px;
+}
+
+.section {
+    display: flex;
+    gap: 60px;
+    margin-bottom: 100px;
+    align-items: center;
+}
+
+.textContent {
+    flex: 1;
+}
+
+.textContent h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #222;
+    position: relative;
+}
+
+.textContent h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #d4af37, #f9f295);
+    border-radius: 2px;
+}
+
+.textContent p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+    color: #555;
+}
+
+.signature {
+    margin-top: 40px;
+    font-style: italic;
+}
+
+.signature p {
+    font-weight: 600;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.signature span {
+    color: #777;
+}
+
+.imageContainer {
+    flex: 1;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.image1 {
+    height: 500px;
+    background: url('https://images.unsplash.com/photo-1602173574767-37ac01994b2a?ixlib=rb-4.0.3&ixid=ltc1qcspdykesszwk0ya5ltntcyh9s38p6l7d0t7dng%3D%3D&auto=format&fit=crop&w=800&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Ценности */
+.valuesSection {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.valuesSection h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: #222;
+    position: relative;
+    display: inline-block;
+}
+
+.valuesSection h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #d4af37, #f9f295);
+    border-radius: 2px;
+}
+
+.valuesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.valueCard {
+    background: white;
+    padding: 40px 30px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.4s ease;
+}
+
+.valueIcon {
+    width: 80px;
+    height: 80px;
+    background: rgba(212, 175, 55, 0.1);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 25px;
+    font-size: 2rem;
+    color: #d4af37;
+}
+
+.valueCard h3 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.valueCard p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Статистика */
+.statsSection {
+    margin-bottom: 100px;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    background: linear-gradient(135deg, #0a0a0a, #222);
+    padding: 60px 40px;
+    border-radius: 15px;
+    color: white;
+}
+
+.statCard {
+    text-align: center;
+    padding: 20px;
+}
+
+.statIcon {
+    font-size: 2.5rem;
+    color: #d4af37;
+    margin-bottom: 15px;
+}
+
+.statValue {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    background: linear-gradient(to right, #d4af37, #f9f295);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.statLabel {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Галерея */
+.gallerySection {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.gallerySection h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 60px;
+    color: #222;
+    position: relative;
+    display: inline-block;
+}
+
+.gallerySection h2::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #d4af37, #f9f295);
+    border-radius: 2px;
+}
+
+.galleryGrid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 300px);
+    gap: 20px;
+}
+
+.galleryItem1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    background-image: url('public/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.galleryItem2 {
+    background-image: url('public/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.galleryItem3 {
+    background-image: url('public/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+.galleryItem4 {
+    background-image: url('public/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+}
+
+/* Призыв к действию */
+.ctaSection {
+    background-image: url('public/images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    border-radius: 15px;
+}
+
+.ctaContent {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.ctaContent h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.ctaContent p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    opacity: 0.9;
+}
+
+.ctaForm {
+    display: flex;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 10px;
+}
+
+.ctaForm input {
+    flex: 1;
+    padding: 16px 20px;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+}
+
+.ctaForm button {
+    background: linear-gradient(to right, #d4af37, #f9f295);
+    color: #0a0a0a;
+    border: none;
+    padding: 0 35px;
+    border-radius: 50px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.ctaForm button:hover {
+    background: linear-gradient(to right, #c19d30, #e8da8a);
+}
+
+/* Адаптивность */
+@media (max-width: 992px) {
+    .section {
+        flex-direction: column;
+    }
+
+    .imageContainer {
+        width: 100%;
+    }
+
+    .galleryGrid {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 250px);
+    }
+
+    .galleryItem1 {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+    }
+}
+
+@media (max-width: 768px) {
+    .heroContent h1 {
+        font-size: 3rem;
+    }
+
+    .ctaForm {
+        flex-direction: column;
+    }
+
+    .ctaForm button {
+        padding: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .heroContent h1 {
+        font-size: 2.5rem;
+    }
+
+    .heroContent p {
+        font-size: 1.2rem;
+    }
+
+    .textContent h2,
+    .valuesSection h2,
+    .gallerySection h2,
+    .ctaContent h2 {
+        font-size: 2rem;
+    }
+
+    .statValue {
+        font-size: 2.5rem;
+    }
+}

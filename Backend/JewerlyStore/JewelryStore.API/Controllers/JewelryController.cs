@@ -26,16 +26,25 @@ public class JewelryController : ControllerBase
 
     [HttpGet("[action]")]
     public async Task<IActionResult> GetJewelries(
-        [FromQuery] int pageNumber = 1, 
-        [FromQuery] int pageSize = 10, 
+        [FromQuery] JewelryFiltersRequest request,
         CancellationToken cancellationToken = default)
     {
-        var jewelries = await _repository.GetPaginatedListAsync(pageNumber, pageSize, cancellationToken);
-        
-        if(jewelries == null) 
-            return Ok("No Jewelries");
-        
-        return Ok(jewelries);
+        var jewelries = await _repository.GetPaginatedListAsync(
+            request.PageNumber,
+            request.PageSize,
+            request.MinPrice,
+            request.MaxPrice,
+            request.StartDate,
+            request.EndDate,
+            request.MinWatches,
+            request.MaxWatches,
+            request.Category,
+            request.Sort,
+            cancellationToken);
+
+        return jewelries == null || !jewelries.Any() 
+            ? Ok("No Jewelries") 
+            : Ok(jewelries);
     }
 
     [HttpGet("[action]")]

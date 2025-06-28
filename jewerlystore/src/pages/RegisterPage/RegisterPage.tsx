@@ -1,29 +1,20 @@
 // @ts-ignore
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { login, setAuthToken } from '../../services/apiService';
-import { useAuth } from '../../context/AuthContext';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { register } from '../../services/apiService';
 // @ts-ignore
-import styles from './LoginPage.module.css';
+import styles from './RegisterPage.module.css';
 
-const LoginPage = () => {
+const RegisterPage = () => {
     const [formData, setFormData] = useState({
+        firstName: '',
+        lastName: '',
         email: '',
         password: ''
     });
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState<string>('');
-    const [successMessage, setSuccessMessage] = useState<string>('');
     const navigate = useNavigate();
-    const location = useLocation();
-    const { setAuthenticated } = useAuth();
-
-    useEffect(() => {
-        if (location.state?.registrationSuccess) {
-            setSuccessMessage('Регистрация прошла успешно! Пожалуйста, войдите.');
-            setError('');
-        }
-    }, [location]);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
@@ -31,19 +22,22 @@ const LoginPage = () => {
     };
 
     // @ts-ignore
-    // В handleSubmit после успешного входа
-    const handleSubmit = async (e) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
         setError('');
 
         try {
-            const token = await login(formData.email, formData.password);
-            setAuthToken(token);
-            setAuthenticated(true); // Обновляем глобальное состояние
-            navigate('/account'); // Перенаправляем сразу в аккаунт
+            await register(
+                formData.firstName,
+                formData.lastName,
+                formData.email,
+                formData.password
+            );
+
+            navigate('/login', { state: { registrationSuccess: true } });
         } catch (err) {
-            setError(err instanceof Error ? err.message : 'Ошибка входа');
+            setError(err instanceof Error ? err.message : 'Ошибка регистрации');
         } finally {
             setLoading(false);
         }
@@ -54,16 +48,10 @@ const LoginPage = () => {
             <div className={styles.card}>
                 <div className={styles.header}>
                     <div className={styles.logo}>💎</div>
-                    <h1 className={styles.title}>Вход в аккаунт</h1>
+                    <h1 className={styles.title}>Регистрация</h1>
                 </div>
 
                 <div className={styles.formWrapper}>
-                    {successMessage && (
-                        <div className={`${styles.message} ${styles.success}`}>
-                            {successMessage}
-                        </div>
-                    )}
-
                     {error && (
                         <div className={`${styles.message} ${styles.error}`}>
                             {error}
@@ -71,6 +59,32 @@ const LoginPage = () => {
                     )}
 
                     <form onSubmit={handleSubmit}>
+                        <div className={styles.formGroup}>
+                            <label className={styles.label}>Имя</label>
+                            <input
+                                type="text"
+                                name="firstName"
+                                value={formData.firstName}
+                                onChange={handleChange}
+                                required
+                                className={styles.input}
+                                placeholder="Ваше имя"
+                            />
+                        </div>
+
+                        <div className={styles.formGroup}>
+                            <label className={styles.label}>Фамилия</label>
+                            <input
+                                type="text"
+                                name="lastName"
+                                value={formData.lastName}
+                                onChange={handleChange}
+                                required
+                                className={styles.input}
+                                placeholder="Ваша фамилия"
+                            />
+                        </div>
+
                         <div className={styles.formGroup}>
                             <label className={styles.label}>Email</label>
                             <input
@@ -92,8 +106,9 @@ const LoginPage = () => {
                                 value={formData.password}
                                 onChange={handleChange}
                                 required
+                                minLength={6}
                                 className={styles.input}
-                                placeholder="Ваш пароль"
+                                placeholder="Придумайте пароль"
                             />
                         </div>
 
@@ -102,15 +117,15 @@ const LoginPage = () => {
                             disabled={loading}
                             className={styles.submitBtn}
                         >
-                            {loading ? 'Вход...' : 'Войти'}
+                            {loading ? 'Регистрация...' : 'Зарегистрироваться'}
                         </button>
                     </form>
 
                     <div className={styles.footer}>
                         <p>
-                            Нет аккаунта?{' '}
-                            <Link to="/register" className={styles.link}>
-                                Зарегистрироваться
+                            Уже есть аккаунт?{' '}
+                            <Link to="/login" className={styles.link}>
+                                Войти
                             </Link>
                         </p>
                     </div>
@@ -120,4 +135,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default RegisterPage;

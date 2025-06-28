@@ -1,10 +1,13 @@
 export interface Jewelry {
-    jewelryId: string;
+    jewelryId: string; // Изменил id на jewelryId
     name: string;
-    prise: number;
+    prise: number; // Используйте prise вместо price
     weight: number;
     inStock: boolean;
-    createdAt: string;
-    updatedAt: string;
     mainImageUrl: string;
+    isPremium: boolean;
+    createdAt: string; // Изменил Date на string
+    updatedAt: string; // Добавил, если нужно
+    watches: number; // Добавил, если нужно
+    category: number;
 }

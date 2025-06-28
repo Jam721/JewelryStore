@@ -13,6 +13,8 @@ public class User
     public string PasswordHash { get; set; } = string.Empty;
 
     public DateTime DateRegistry { get; set; }
+    
+    public Cart Cart { get; set; }
 
 
     public User CreateUser(string firstName, string lastName, string email, string passwordHash)
@@ -23,6 +25,11 @@ public class User
         Email = email;
         PasswordHash = passwordHash;
         DateRegistry = DateTime.UtcNow;
+        Cart = new Cart
+        {
+            Id = Guid.NewGuid(),
+            Jewelries = []
+        };
         return this;
     }
 }

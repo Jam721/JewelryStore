@@ -25,6 +25,7 @@ services.AddMinioExtension(configuration);
 services.AddAutoMapper(typeof(UserProfile).Assembly);
 services.AddAutoMapper(typeof(JewelryProfile).Assembly);
 services.AddAutoMapper(typeof(JewelryDtoProfiles).Assembly);
+services.AddAutoMapper(typeof(CartProfile).Assembly);
 
 services.AddDbContextExtensions(configuration);
 services.AddApiAuthentication(configuration.GetSection(nameof(JwtOptions)).Get<JwtOptions>()!);
@@ -38,6 +39,7 @@ services.AddScoped<IPasswordHasher, PasswordHasher>();
 services.AddScoped<IUserService, UserService>();
 services.AddScoped<IFileStorageService, FileStorageService>();
 services.AddScoped<IJewelryService, JewelryService>();
+services.AddScoped<ICartRepository, CartRepository>();
 
 services.AddCors(options => {
     options.AddPolicy("ReactPolicy", policy => {
